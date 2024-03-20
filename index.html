@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Love Calculator</title>
+</head>
+<body>
+    
+    <div class="calculator-container">
+        <h1 style="margin: 70px; font-size: xx-large;">Love Calculator</h1>
+        <label for="person1">YOUR NAME:</label>
+        <input type="text" id="person1" placeholder="Enter name"><br><br>
+
+        <label for="person2"> Love's name:</label>
+        <input type="text" id="person2" placeholder="Enter name"><br><br>
+
+        <button onclick="calculateLove()" style="border-radius: 10px;">Calculate Love</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateLove() {
+            var person1 = document.getElementById('person1').value;
+            var person2 = document.getElementById('person2').value;
+
+            if (person1.trim() === '' || person2.trim() === '') {
+                alert("Please enter names for both persons.");
+                return;
+            }
+
+            var loveScore = Math.round(Math.random() * 100);
+
+            var resultElement = person1 + " and " + person2 + "'s Love Score is: " + loveScore + "%";
+            document.getElementById('result').innerHTML = resultElement;
+
+            if (loveScore <= 49) {
+                document.getElementById('result').innerHTML += "<br>Your love is not good enough.";
+            }
+            else if (loveScore >= 49) {
+                document.getElementById('result').innerHTML += "<br>Your love is Perfect.";
+            }
+        }
+    </script>
+</body>
+</html>
+
