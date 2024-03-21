@@ -1,23 +1,47 @@
 
-<!DOCTYPE html>
+
+
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Love Calculator</title>
+    <style>
+        /* Media query for smaller screens */
+        @media screen and (max-width: 600px) {
+            .calculator-container {
+                margin: 20px;
+            }
+
+            h1 {
+                margin: 20px;
+                font-size: large;
+            }
+
+            label, input, button {
+                display: block;
+                margin: 10px 0;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
     
     <div class="calculator-container">
-        <h1 style="margin: 70px; font-size: xx-large;">Love Calculator</h1>
+        <h1>Love Calculator</h1>
         <label for="person1">YOUR NAME:</label>
-        <input type="text" id="person1" placeholder="Enter name"><br><br>
+        <input type="text" id="person1" placeholder="Enter name"> <br>
 
         <label for="person2"> Love's name:</label>
-        <input type="text" id="person2" placeholder="Enter name"><br><br>
+        <input type="text" id="person2" placeholder="Enter name">
 
-        <button onclick="calculateLove()" style="border-radius: 10px;">Calculate Love</button>
+        <button onclick="calculateLove()">Calculate Love</button>
 
         <div id="result"></div>
     </div>
